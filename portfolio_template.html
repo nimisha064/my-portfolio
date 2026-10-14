@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananya Sharma | Engineering Graduate Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts - Inter & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            rose: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+            },
+            lavender: {
+              50: '#f8f5ff',
+              100: '#f0e8ff',
+              200: '#d8c4fd',
+              500: '#a855f7',
+              600: '#9333ea',
+              800: '#581c87',
+            },
+            softbg: '#faf8fc',
+            darkbg: '#0f172a',
+            carddark: '#1e293b'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d8c4fd;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a855f7;
+    }
+
+    /* Gradient Animation */
+    .gradient-text {
+      background: linear-gradient(135deg, #a855f7 0%, #fb7185 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #f0e8ff 0%, #ffe4e6 100%);
+    }
+
+    .dark .gradient-bg {
+      background: linear-gradient(135deg, #3b0764 0%, #4c0519 100%);
+    }
+
+    /* Soft Shadow Glow */
+    .rose-glow {
+      box-shadow: 0 10px 25px -5px rgba(251, 113, 133, 0.25);
+    }
+    .lavender-glow {
+      box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-softbg dark:bg-darkbg text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-darkbg/80 backdrop-blur-md z-50 border-b border-purple-100 dark:border-slate-800 transition-all">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-serif font-bold tracking-tight text-slate-900 dark:text-white">
+        Ananya<span class="text-rose-400 font-sans font-extrabold text-3xl">.</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-rose-500 dark:hover:text-rose-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-rose-500 dark:hover:text-rose-400 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="p-2.5 rounded-full bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-rose-300 hover:ring-2 hover:ring-rose-300 transition-all" aria-label="Toggle Theme">
+          <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
+          <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-slate-700 dark:text-slate-200 focus:outline-none" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-carddark border-b border-purple-100 dark:border-slate-800 px-6 py-4 space-y-3">
+      <a href="#about" class="block text-slate-600 dark:text-slate-300 hover:text-rose-500 py-1">About</a>
+      <a href="#projects" class="block text-slate-600 dark:text-slate-300 hover:text-rose-500 py-1">Projects</a>
+      <a href="#experience" class="block text-slate-600 dark:text-slate-300 hover:text-rose-500 py-1">Experience</a>
+      <a href="#contact" class="block text-slate-600 dark:text-slate-300 hover:text-rose-500 py-1">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="hero" class="min-h-[90vh] flex items-center justify-center relative overflow-hidden py-12">
+      <!-- Decorative Background Blur Orbs -->
+      <div class="absolute top-1/4 left-10 w-72 h-72 bg-purple-200 dark:bg-purple-900/30 rounded-full blur-3xl -z-10 opacity-60"></div>
+      <div class="absolute bottom-10 right-10 w-80 h-80 bg-rose-200 dark:bg-rose-900/30 rounded-full blur-3xl -z-10 opacity-60"></div>
+
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+          <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-purple-100 dark:bg-slate-800 text-purple-700 dark:text-purple-300 text-xs font-semibold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            <span>Computer Science Engineering Graduate</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white leading-tight">
+            Hi, I'm <span class="gradient-text">Ananya Sharma</span>
+          </h1>
+
+          <p class="text-lg text-slate-600 dark:text-slate-300 max-w-xl font-normal leading-relaxed">
+            Passionate Engineering Fresher bridging analytical thinking with creative design. Focused on building clean, accessible web applications and data-driven solutions.
+          </p>
+
+          <!-- Social Links & Action CTA -->
+          <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+            <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-purple-600 to-rose-400 hover:from-purple-700 hover:to-rose-500 text-white font-medium rounded-xl shadow-lg lavender-glow transition-all duration-300 text-center">
+              Get In Touch
+            </a>
+            
+            <a href="javascript:void(0)" onclick="downloadResume()" class="w-full sm:w-auto px-8 py-3.5 border-2 border-purple-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-purple-50 dark:hover:bg-slate-800 font-medium rounded-xl transition-all text-center flex items-center justify-center space-x-2">
+              <i class="fa-solid fa-download text-sm"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center justify-center md:justify-start space-x-5 pt-4 text-slate-500 dark:text-slate-400">
+            <a href="https://github.com" target="_blank" rel="noopener" class="hover:text-rose-500 text-xl transition-colors" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-rose-500 text-xl transition-colors" title="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:ananya.sharma@example.com" class="hover:text-rose-500 text-xl transition-colors" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Image Placeholder with Soft Frame -->
+        <div class="md:col-span-5 flex justify-center relative">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-2xl p-3 bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 rotate-2 hover:rotate-0 transition-transform duration-300">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" 
+                 alt="Ananya Sharma Profile" 
+                 class="w-full h-full object-cover rounded-2xl"
+                 onerror="this.src='https://placehold.co/400x400/f0e8ff/9333ea?text=Ananya+Sharma'">
+          </div>
+          <!-- Decorative Floating Card -->
+          <div class="absolute -bottom-4 -left-4 sm:left-4 bg-white/90 dark:bg-carddark/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-purple-100 dark:border-slate-700 flex items-center space-x-3">
+            <div class="p-2.5 rounded-xl bg-rose-100 text-rose-500">
+              <i class="fa-solid fa-graduation-cap text-lg"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 uppercase font-semibold">Degree</p>
+              <p class="text-sm font-bold text-slate-800 dark:text-white">B.Tech CSE (8.8 CGPA)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ME SECTION ================= -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">About Me</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">
+            A curious problem solver ready to apply theoretical computer science foundations to real-world software development.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <!-- Bio & Background -->
+          <div class="space-y-6">
+            <h3 class="text-2xl font-serif font-semibold text-slate-800 dark:text-white">
+              Engineering graduate eager to create impactful digital experiences.
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              I recently graduated with a Bachelor's Degree in Computer Science and Engineering. Throughout my academic journey, I have developed a strong foundation in software engineering principles, algorithm design, and full-stack web development.
+            </p>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              I love building intuitive web interfaces, exploring cloud technologies, and working on collaborative open-source projects. When I am not coding, you will find me reading tech tech blogs, participating in hackathons, or creating digital art.
+            </p>
+
+            <!-- Education Card -->
+            <div class="mt-8 p-6 rounded-2xl bg-purple-50/60 dark:bg-carddark border border-purple-100 dark:border-slate-800 space-y-4">
+              <div class="flex items-center space-x-3 text-purple-600 dark:text-purple-400">
+                <i class="fa-solid fa-university text-xl"></i>
+                <h4 class="font-bold text-slate-900 dark:text-white">Education Details</h4>
+              </div>
+              <div class="border-l-2 border-purple-300 pl-4 space-y-1">
+                <p class="font-bold text-slate-800 dark:text-white">B.Tech in Computer Science & Engineering</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400">National Institute of Technology • 2020 – 2024</p>
+                <p class="text-xs font-medium text-rose-500">First Class with Distinction (CGPA: 8.8/10)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Badges -->
+          <div class="space-y-6">
+            <h3 class="text-2xl font-serif font-semibold text-slate-800 dark:text-white">
+              Technical Capabilities
+            </h3>
+
+            <!-- Languages -->
+            <div class="space-y-2">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Programming Languages</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 shadow-sm font-medium">Java</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 shadow-sm font-medium">Python</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 shadow-sm font-medium">C++</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 shadow-sm font-medium">JavaScript (ES6+)</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-white dark:bg-carddark border border-purple-100 dark:border-slate-700 shadow-sm font-medium">SQL</span>
+              </div>
+            </div>
+
+            <!-- Web Tech -->
+            <div class="space-y-2">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Web Technologies & Frameworks</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50 font-medium">HTML5 & CSS3</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50 font-medium">Tailwind CSS</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50 font-medium">React.js</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50 font-medium">Node.js</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50 font-medium">Bootstrap</span>
+              </div>
+            </div>
+
+            <!-- Developer Tools -->
+            <div class="space-y-2">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Tools & Methodologies</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-medium">Git & GitHub</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-medium">VS Code</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-medium">Postman</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-medium">Agile Basics</span>
+                <span class="px-3.5 py-1.5 rounded-xl text-sm bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-300 border border-purple-200 dark:border-purple-800/50 font-medium">Figma</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">Featured Projects</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">
+            A display of my academic capstone, personal applications, and web development experiments.
+          </p>
+
+          <!-- Filter Buttons -->
+          <div class="flex justify-center space-x-2 mt-8">
+            <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 text-xs font-semibold rounded-xl bg-purple-600 text-white transition-all">All</button>
+            <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-xl bg-white dark:bg-carddark text-slate-600 dark:text-slate-300 hover:bg-purple-100 transition-all">Web Apps</button>
+            <button onclick="filterProjects('ai')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-xl bg-white dark:bg-carddark text-slate-600 dark:text-slate-300 hover:bg-purple-100 transition-all">AI/ML</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1 -->
+          <div class="project-card web rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
+                   alt="Smart Health Tracker Dashboard" 
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/600x400/f0e8ff/9333ea?text=Health+Dashboard'">
+              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-purple-600">Capstone</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Smart Health Dashboard</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                  A responsive web interface that tracks health metrics, visualizes weekly exercise data, and suggests customized diet plans.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">React</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Chart.js</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Tailwind</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Code</span>
+                  </a>
+                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
+                    <span>Live Demo</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card ai rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" 
+                   alt="Plant Disease Detector" 
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=Plant+Disease+AI'">
+              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-rose-500">Machine Learning</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Plant Disease Classifier</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                  CNN-based computer vision tool trained to identify crop diseases from leaf images with over 93% accuracy.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Python</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">TensorFlow</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">OpenCV</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Code</span>
+                  </a>
+                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
+                    <span>Paper / Notebook</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card web rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" 
+                   alt="Campus Event Platform" 
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                   onerror="this.src='https://placehold.co/600x400/f0e8ff/9333ea?text=Campus+Event+Portal'">
+              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-purple-600">Full Stack</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Campus Event Portal</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+                  A centralized event discovery platform allowing college students to register, buy tickets, and submit feedback.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Node.js</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Express</span>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">MongoDB</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <a href="https://github.com" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Code</span>
+                  </a>
+                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
+                    <span>Live Demo</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE & CERTIFICATIONS SECTION ================= -->
+    <section id="experience" class="py-20 bg-white dark:bg-slate-900/50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">Experience & Certifications</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">
+            Internships, academic leadership, and professional certifications.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          <!-- Timeline / Experience -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+              <i class="fa-solid fa-briefcase text-purple-500"></i>
+              <span>Practical Experience</span>
+            </h3>
+
+            <div class="relative border-l-2 border-purple-200 dark:border-slate-800 pl-6 space-y-8 ml-2">
+              <!-- Item 1 -->
+              <div class="relative">
+                <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-rose-400 ring-4 ring-rose-100 dark:ring-slate-900"></div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-purple-100 dark:bg-slate-800 text-purple-600 dark:text-purple-300">May 2023 – Jul 2023</span>
+                <h4 class="text-lg font-bold text-slate-800 dark:text-white mt-2">Web Development Intern</h4>
+                <p class="text-xs text-slate-500 font-medium">TechSpark Solutions Pvt. Ltd.</p>
+                <ul class="text-sm text-slate-600 dark:text-slate-300 mt-2 list-disc list-inside space-y-1">
+                  <li>Assisted in building responsive landing pages using React and Tailwind CSS.</li>
+                  <li>Improved page load time by 20% through asset optimization and lazy loading.</li>
+                  <li>Participated in daily agile stand-ups and code reviews.</li>
+                </ul>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="relative">
+                <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-purple-400 ring-4 ring-purple-100 dark:ring-slate-900"></div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded bg-purple-100 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Jan 2023 – Apr 2023</span>
+                <h4 class="text-lg font-bold text-slate-800 dark:text-white mt-2">Open Source Contributor</h4>
+                <p class="text-xs text-slate-500 font-medium">GirlScript Summer of Code</p>
+                <ul class="text-sm text-slate-600 dark:text-slate-300 mt-2 list-disc list-inside space-y-1">
+                  <li>Contributed bug fixes and accessibility enhancements to web projects.</li>
+                  <li>Collaborated with international mentors using Git and GitHub workflows.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Achievements -->
+          <div class="space-y-6">
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+              <i class="fa-solid fa-certificate text-rose-400"></i>
+              <span>Certifications & Achievements</span>
+            </h3>
+
+            <div class="space-y-4">
+              <!-- Cert Card 1 -->
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-carddark border border-purple-100 dark:border-slate-800 flex items-start space-x-4">
+                <div class="p-3 bg-purple-100 dark:bg-purple-950/50 text-purple-600 rounded-lg">
+                  <i class="fa-brands fa-aws text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 dark:text-white">AWS Certified Cloud Practitioner</h4>
+                  <p class="text-xs text-slate-500">Amazon Web Services • Issued 2024</p>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Foundational knowledge of AWS Cloud concepts, security, and services.</p>
+                </div>
+              </div>
+
+              <!-- Cert Card 2 -->
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-carddark border border-purple-100 dark:border-slate-800 flex items-start space-x-4">
+                <div class="p-3 bg-rose-100 dark:bg-rose-950/50 text-rose-500 rounded-lg">
+                  <i class="fa-solid fa-code text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 dark:text-white">Meta Front-End Developer Certificate</h4>
+                  <p class="text-xs text-slate-500">Coursera • Issued 2023</p>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Specialized coursework covering React, HTML5/CSS, UX foundations, and version control.</p>
+                </div>
+              </div>
+
+              <!-- Achievement Card -->
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-carddark border border-purple-100 dark:border-slate-800 flex items-start space-x-4">
+                <div class="p-3 bg-amber-100 dark:bg-amber-950/50 text-amber-500 rounded-lg">
+                  <i class="fa-solid fa-trophy text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800 dark:text-white">1st Runner Up - Smart City Hackathon</h4>
+                  <p class="text-xs text-slate-500">Inter-College Tech Fest • 2023</p>
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Built an IoT-enabled smart parking solution pitch in under 36 hours.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">Get In Touch</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">
+            I am currently looking for full-time entry-level engineering roles! Feel free to reach out.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Direct Details -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="p-6 rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 space-y-6 shadow-sm">
+              <h3 class="text-xl font-serif font-bold text-slate-900 dark:text-white">Contact Information</h3>
+              
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/50 text-purple-600 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-envelope text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">Email Me</p>
+                  <a href="mailto:ananya.sharma@example.com" class="text-sm font-bold text-slate-800 dark:text-white hover:text-rose-500 transition-colors">ananya.sharma@example.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-950/50 text-rose-500 flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-location-dot text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">Location</p>
+                  <p class="text-sm font-bold text-slate-800 dark:text-white">Bengaluru, India (Open to Relocation)</p>
+                </div>
+              </div>
+
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/50 text-purple-600 flex items-center justify-center shrink-0">
+                  <i class="fa-brands fa-linkedin-in text-xl"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-400 font-medium">Connect on LinkedIn</p>
+                  <a href="https://linkedin.com" target="_blank" class="text-sm font-bold text-slate-800 dark:text-white hover:text-rose-500 transition-colors">linkedin.com/in/ananya-sharma</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="lg:col-span-7">
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="p-8 rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 shadow-sm space-y-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-xs font-semibold uppercase text-slate-500 mb-2">Your Name</label>
+                  <input type="text" id="name" required placeholder="e.g., Jane Doe" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white focus:outline-none focus:border-rose-400 transition-colors">
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-semibold uppercase text-slate-500 mb-2">Your Email</label>
+                  <input type="email" id="email" required placeholder="jane@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white focus:outline-none focus:border-rose-400 transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold uppercase text-slate-500 mb-2">Subject</label>
+                <input type="text" id="subject" required placeholder="Role Opportunity / Collaboration" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white focus:outline-none focus:border-rose-400 transition-colors">
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold uppercase text-slate-500 mb-2">Message</label>
+                <textarea id="message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white focus:outline-none focus:border-rose-400 transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-purple-600 to-rose-400 hover:from-purple-700 hover:to-rose-500 text-white font-semibold rounded-xl shadow-md lavender-glow transition-all duration-300">
+                Send Message
+              </button>
+
+              <!-- Feedback Banner -->
+              <div id="form-feedback" class="hidden p-4 rounded-xl text-center text-sm font-medium"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 bg-white dark:bg-slate-900 border-t border-purple-100 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+      <p>© 2026 Ananya Sharma. Designed & Built with passion.</p>
+      <div class="flex space-x-6">
+        <a href="#hero" class="hover:text-rose-500 transition-colors">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE JAVASCRIPT ================= -->
+  <script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      lightIcon.classList.remove('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      darkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      darkIcon.classList.toggle('hidden');
+      lightIcon.classList.toggle('hidden');
+
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        }
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      }
+    });
+
+    // Mobile Navigation Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close Mobile Menu on Click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Project Filtering
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-purple-600', 'text-white');
+        btn.classList.add('bg-white', 'dark:bg-carddark', 'text-slate-600', 'dark:text-slate-300');
+      });
+
+      event.target.classList.remove('bg-white', 'dark:bg-carddark', 'text-slate-600', 'dark:text-slate-300');
+      event.target.classList.add('bg-purple-600', 'text-white');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Interactive Contact Form Handling
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      
+      // Simulate submission
+      feedback.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+      feedback.classList.add('bg-emerald-100', 'text-emerald-700');
+      feedback.innerHTML = "✨ Thank you! Your message has been sent successfully. I'll get back to you soon.";
+
+      // Reset Form
+      document.getElementById('contact-form').reset();
+
+      setTimeout(() => {
+        feedback.classList.add('hidden');
+      }, 5000);
+    }
+
+    // Resume Download Simulation
+    function downloadResume() {
+      const feedback = document.createElement('div');
+      feedback.className = "fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-lg z-50 flex items-center space-x-2";
+      feedback.innerHTML = '<i class="fa-solid fa-circle-check text-rose-400"></i><span>CV download started!</span>';
+      document.body.appendChild(feedback);
+
+      setTimeout(() => {
+        feedback.remove();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
