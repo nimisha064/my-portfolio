@@ -573,17 +573,14 @@ Implemented code analysis and issue reporting with severity levels and line numb
 </section>
 <!-- ================= END EXPERIENCE & ACHIEVEMENTS SECTION ================= -->
 
-
-
 <!-- ================= CONTACT SECTION ================= -->
-<section id="contact" class="py-20 bg-white dark:bg-slate-900/50">
+<section id="contact" class="relative block w-full py-20 bg-white dark:bg-slate-900">
 
   <div class="max-w-6xl mx-auto px-6">
 
-    <!-- Contact Section Heading -->
-    <div class="text-center max-w-2xl mx-auto mb-12">
-
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+    <!-- CONTACT HEADING -->
+    <div class="block text-center max-w-2xl mx-auto mb-12">
+      <h2 class="block text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
         Get In Touch
       </h2>
 
@@ -592,94 +589,63 @@ Implemented code analysis and issue reporting with severity levels and line numb
       <p class="mt-4 text-slate-600 dark:text-slate-300">
         Have an opportunity or want to connect? Feel free to reach out!
       </p>
-
     </div>
 
-    <!-- Contact Form Container -->
+    <!-- CONTACT FORM -->
     <div class="max-w-2xl mx-auto p-6 md:p-8 rounded-2xl border border-purple-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm">
 
-      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">
+      <h3 class="block text-xl font-bold text-slate-900 dark:text-white mb-6">
         Contact Form
       </h3>
 
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-            class="space-y-5">
+      <form id="contact-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
 
-        <!-- Name -->
         <div>
           <label for="contact-name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Your Name
           </label>
-          <input
-            id="contact-name"
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-          >
+          <input id="contact-name" type="text" name="name" placeholder="Enter your name" required
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
         </div>
 
-        <!-- Email -->
         <div>
           <label for="contact-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Email Address
           </label>
-          <input
-            id="contact-email"
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-          >
+          <input id="contact-email" type="email" name="email" placeholder="Enter your email" required
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
         </div>
 
-        <!-- Subject -->
         <div>
           <label for="contact-subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Subject
           </label>
-          <input
-            id="contact-subject"
-            type="text"
-            name="subject"
-            placeholder="Enter the subject"
-            required
-            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-          >
+          <input id="contact-subject" type="text" name="subject" placeholder="Enter the subject" required
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white">
         </div>
 
-        <!-- Message -->
         <div>
           <label for="contact-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
             Your Message
           </label>
-          <textarea
-            id="contact-message"
-            name="message"
-            rows="5"
-            placeholder="Write your message here..."
-            required
-            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-          ></textarea>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Write your message here..." required
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"></textarea>
         </div>
 
-        <!-- Submit Button -->
-        <button
-          type="submit"
-          class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-rose-400 text-white font-semibold hover:opacity-90 transition duration-300"
-        >
+        <button type="submit"
+          class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-rose-400 text-white font-semibold hover:opacity-90 transition">
           <i class="fa-solid fa-paper-plane mr-2"></i>
           Send Message
         </button>
 
+        <p id="form-feedback" class="hidden p-3 rounded-lg text-sm" role="status"></p>
+
       </form>
     </div>
-
   </div>
 </section>
 <!-- ================= END CONTACT SECTION ================= -->
+
 
 
           
