@@ -753,17 +753,31 @@ Implemented code analysis and issue reporting with severity levels and line numb
       }, 5000);
     }
 
-    // Resume Download Simulation
-    function downloadResume() {
-      const feedback = document.createElement('div');
-      feedback.className = "fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-lg z-50 flex items-center space-x-2";
-      feedback.innerHTML = '<i class="fa-solid fa-circle-check text-rose-400"></i><span>CV download started!</span>';
-      document.body.appendChild(feedback);
+<!-- Resume Download -->
+<script>
+  function downloadResume() {
+    const link = document.createElement('a');
+    link.href = './cv.pdf';
+    link.download = 'Nimisha_R_Resume.pdf';
 
-      setTimeout(() => {
-        feedback.remove();
-      }, 3000);
-    }
-  </script>
-</body>
-</html>
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Show download notification
+    const feedback = document.createElement('div');
+
+    feedback.className =
+      'fixed bottom-5 right-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-lg z-50 flex items-center space-x-2';
+
+    feedback.innerHTML =
+      '<i class="fa-solid fa-circle-check text-rose-400"></i>' +
+      '<span>CV download started!</span>';
+
+    document.body.appendChild(feedback);
+
+    setTimeout(() => {
+      feedback.remove();
+    }, 3000);
+  }
+</script>
