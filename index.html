@@ -223,52 +223,56 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
           </p>
         </div>
 
-<!-- ============== BIO, SKILLS & EDUCATION ============== -->
+
+<!-- ============== ABOUT, SKILLS & EDUCATION ============== -->
 <section id="about" class="w-full py-16 bg-white dark:bg-slate-900">
-  <div class="w-full max-w-7xl mx-auto px-6">
 
-    <!-- ROW 1: BIO LEFT + SKILLS RIGHT -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+  <!-- Main container: centered, responsive, and wide -->
+  <div class="w-full max-w-screen-xl mx-auto px-6 lg:px-10">
 
-      <!-- BIO & BACKGROUND -->
-      <div class="min-w-0 space-y-6">
+    <!-- ROW 1: ABOUT ME + TECHNICAL SKILLS -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
 
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">
+      <!-- ABOUT ME: LEFT COLUMN -->
+      <div class="w-full min-w-0 space-y-6">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
           About Me
         </h2>
 
-        <h3 class="text-xl md:text-2xl font-semibold text-slate-800 dark:text-white leading-relaxed">
+        <p class="text-lg font-semibold text-slate-800 dark:text-white leading-relaxed">
           I am an Electronics and Communication Engineering graduate from
           United Institute of Technology, Coimbatore, with a strong interest
           in artificial intelligence, machine learning, computer vision,
           and intelligent systems.
-        </h3>
+        </p>
 
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p class="text-base text-slate-600 dark:text-slate-300 leading-7">
           My technical background includes Python, OpenCV, embedded systems,
           and sensor integration.
         </p>
 
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p class="text-base text-slate-600 dark:text-slate-300 leading-7">
           Through projects such as scene understanding using computer vision,
           an AI-powered code reviewer, and an ESP32-based fire-fighting robot,
           I have gained practical experience in programming, problem-solving,
           and developing technology-based solutions.
         </p>
 
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+        <p class="text-base text-slate-600 dark:text-slate-300 leading-7">
           These experiences have motivated me to explore research and understand
           how intelligent systems can address real-world challenges. I aspire
           to pursue a career in research and development, focusing on AI-based
-          perception systems and autonomous technologies.
+          perception systems and autonomous technologies, while contributing
+          to scientific and technological advancements that benefit society.
         </p>
 
       </div>
 
-      <!-- TECHNICAL SKILLS -->
-      <div id="skills" class="min-w-0">
+      <!-- TECHNICAL SKILLS: RIGHT COLUMN -->
+      <div id="skills" class="w-full min-w-0">
 
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">
           Technical Skills
         </h2>
 
@@ -276,13 +280,13 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
           Technologies and tools I work with
         </p>
 
-        <!-- TECHNICAL SKILLS -->
         <h3 class="text-sm font-semibold uppercase tracking-wide
                    text-slate-500 dark:text-slate-400 mb-4">
           Technical Skills
         </h3>
 
         <div class="flex flex-wrap gap-3 mb-8">
+
           <span class="skill-pill">Python</span>
           <span class="skill-pill">Java</span>
           <span class="skill-pill">C Programming</span>
@@ -297,27 +301,29 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
           <span class="skill-pill">Data Analysis</span>
           <span class="skill-pill">Data Visualization</span>
           <span class="skill-pill">MATLAB</span>
+
         </div>
 
-        <!-- PROFESSIONAL SKILLS -->
         <h3 class="text-sm font-semibold uppercase tracking-wide
                    text-slate-500 dark:text-slate-400 mb-4">
           Professional Skills
         </h3>
 
         <div class="flex flex-wrap gap-3">
+
           <span class="soft-pill">Problem-Solving</span>
           <span class="soft-pill">Critical Thinking</span>
           <span class="soft-pill">Analytical Skills</span>
           <span class="soft-pill">Teamwork</span>
           <span class="soft-pill">Communication</span>
+
         </div>
 
       </div>
     </div>
 
-    <!-- ROW 2: EDUCATION FULL WIDTH -->
-    <div id="education" class="w-full mt-16">
+    <!-- ROW 2: EDUCATION ACROSS THE FULL WIDTH -->
+    <div id="education" class="w-full mt-20">
 
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
@@ -329,29 +335,36 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
         </p>
       </div>
 
-      <!-- COLLEGE AND SCHOOL SIDE BY SIDE -->
+      <!-- TWO EDUCATION CARDS -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
-        <!-- COLLEGE CARD -->
-        <div class="flex flex-col sm:flex-row min-w-0 overflow-hidden
-                    rounded-2xl bg-purple-50/60 dark:bg-slate-800
-                    border border-purple-100 dark:border-slate-700
-                    shadow-sm hover:shadow-lg transition">
+        <!-- COLLEGE -->
+        <article class="w-full min-w-0 flex flex-col sm:flex-row overflow-hidden
+                        rounded-2xl bg-purple-50/60 dark:bg-slate-800
+                        border border-purple-100 dark:border-slate-700
+                        shadow-sm hover:shadow-lg transition-shadow">
 
           <img
-            src="college.png"
+            src="./college.png"
             alt="United Institute of Technology campus"
-            class="w-full sm:w-2/5 h-56 sm:h-auto sm:min-h-64 object-cover"
+            class="w-full sm:w-2/5 sm:max-w-64 h-56 sm:h-auto sm:min-h-64 object-cover"
             loading="lazy"
           />
 
           <div class="flex-1 min-w-0 p-6 flex flex-col justify-center gap-3">
 
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-              B.E. in Electronics and Communication Engineering
-            </h3>
+            <div class="flex items-center gap-3 text-purple-600 dark:text-purple-400">
+              <i class="fa-solid fa-graduation-cap text-xl"></i>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                Undergraduate Education
+              </h3>
+            </div>
 
-            <p class="text-slate-600 dark:text-slate-300">
+            <p class="text-lg font-semibold text-slate-800 dark:text-white">
+              B.E. in Electronics and Communication Engineering
+            </p>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300">
               United Institute of Technology, Coimbatore
             </p>
 
@@ -364,28 +377,35 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
             </p>
 
           </div>
-        </div>
+        </article>
 
-        <!-- SCHOOL CARD -->
-        <div class="flex flex-col sm:flex-row min-w-0 overflow-hidden
-                    rounded-2xl bg-purple-50/60 dark:bg-slate-800
-                    border border-purple-100 dark:border-slate-700
-                    shadow-sm hover:shadow-lg transition">
+        <!-- HIGHER SECONDARY SCHOOL -->
+        <article class="w-full min-w-0 flex flex-col sm:flex-row overflow-hidden
+                        rounded-2xl bg-purple-50/60 dark:bg-slate-800
+                        border border-purple-100 dark:border-slate-700
+                        shadow-sm hover:shadow-lg transition-shadow">
 
           <img
-            src="school.jpeg"
+            src="./school.jpeg"
             alt="Vidya Vikashini Matriculation Higher Secondary School"
-            class="w-full sm:w-2/5 h-56 sm:h-auto sm:min-h-64 object-cover"
+            class="w-full sm:w-2/5 sm:max-w-64 h-56 sm:h-auto sm:min-h-64 object-cover"
             loading="lazy"
           />
 
           <div class="flex-1 min-w-0 p-6 flex flex-col justify-center gap-3">
 
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-              State Board – Class XII
-            </h3>
+            <div class="flex items-center gap-3 text-purple-600 dark:text-purple-400">
+              <i class="fa-solid fa-school text-xl"></i>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                Higher Secondary Education
+              </h3>
+            </div>
 
-            <p class="text-slate-600 dark:text-slate-300">
+            <p class="text-lg font-semibold text-slate-800 dark:text-white">
+              State Board – Class XII
+            </p>
+
+            <p class="text-sm text-slate-600 dark:text-slate-300">
               Vidya Vikashini Matriculation Higher Secondary School,
               Tamil Nadu
             </p>
@@ -403,7 +423,7 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
             </p>
 
           </div>
-        </div>
+        </article>
 
       </div>
     </div>
@@ -416,10 +436,12 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
   .skill-pill,
   .soft-pill {
     display: inline-block;
+    max-width: 100%;
     padding: 9px 14px;
     border-radius: 14px;
     font-size: 14px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 
   .skill-pill {
@@ -447,7 +469,7 @@ Building intelligent systems that perceive, learn, and decide, with the goal of 
     border-color: #881337;
   }
 </style>
-<!-- ============== END BIO, SKILLS & EDUCATION ============== -->
+<!-- ============== END ABOUT, SKILLS & EDUCATION ============== -->
 
 
 <!-- ================= PROJECTS SECTION ================= -->
