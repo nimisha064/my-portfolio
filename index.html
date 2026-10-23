@@ -303,139 +303,290 @@ These experiences have motivated me to explore research and understand how intel
       </div>
     </section>
 
-    <!-- ================= PROJECTS SECTION ================= -->
-    <section id="projects" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white"> Projects</h2>
-          <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">
-            
+ 
+<!-- ================= PROJECTS SECTION ================= -->
+<section id="projects" class="py-20 bg-white dark:bg-slate-900">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- HEADING -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+        Projects
+      </h2>
+      <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-rose-400 mx-auto mt-3 rounded-full"></div>
+      <p class="mt-4 text-slate-600 dark:text-slate-300">
+        Explore my projects in software development, AI/ML, embedded systems, and robotics.
+      </p>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <button type="button" onclick="filterProjects('all', this)"
+        class="filter-btn px-4 py-2 text-sm font-semibold rounded-xl bg-purple-600 text-white">
+        All
+      </button>
+      <button type="button" onclick="filterProjects('web', this)"
+        class="filter-btn px-4 py-2 text-sm font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-purple-100 dark:border-slate-700">
+        Software Development
+      </button>
+      <button type="button" onclick="filterProjects('embedded', this)"
+        class="filter-btn px-4 py-2 text-sm font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-purple-100 dark:border-slate-700">
+        Embedded & Robotics
+      </button>
+      <button type="button" onclick="filterProjects('ai', this)"
+        class="filter-btn px-4 py-2 text-sm font-semibold rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-purple-100 dark:border-slate-700">
+        AI/ML
+      </button>
+    </div>
+
+    <!-- SLIDER CONTROLS -->
+    <div class="flex justify-end gap-3 mb-4">
+      <button type="button" onclick="slideProjects(-1)"
+        aria-label="Previous projects"
+        class="w-10 h-10 rounded-full border border-purple-200 dark:border-slate-700 text-purple-600 dark:text-purple-300 hover:bg-purple-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button type="button" onclick="slideProjects(1)"
+        aria-label="Next projects"
+        class="w-10 h-10 rounded-full border border-purple-200 dark:border-slate-700 text-purple-600 dark:text-purple-300 hover:bg-purple-100 dark:hover:bg-slate-800">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- PROJECT CAROUSEL -->
+    <div id="projects-slider"
+         class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6"
+         style="scrollbar-width: none;">
+
+      <!-- 1. COMPUTER VISION -->
+      <article class="project-card ai shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-purple-100 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-eye text-6xl text-purple-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Scene Understanding Using Computer Vision</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            Python and OpenCV project for visual scene analysis, object-shape detection, and image processing.
           </p>
-
-          <!-- Filter Buttons -->
-          <div class="flex justify-center space-x-2 mt-8">
-            <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 text-xs font-semibold rounded-xl bg-purple-600 text-white transition-all">All</button>
-            <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-xl bg-white dark:bg-carddark text-slate-600 dark:text-slate-300 hover:bg-purple-100 transition-all">Embeeded and robotics</button>
-            <button onclick="filterProjects('ai')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-xl bg-white dark:bg-carddark text-slate-600 dark:text-slate-300 hover:bg-purple-100 transition-all">AI/ML</button>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Python</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">OpenCV</span>
           </div>
+          <a href="https://github.com/nimisha064/scene-understanding-computer-vision" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
         </div>
+      </article>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- Project 1 -->
-          <div class="project-card web rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
-                   alt="Smart Health Tracker Dashboard" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/600x400/f0e8ff/9333ea?text=Health+Dashboard'">
-              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-purple-600">Computer vision</span>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Scene Understanding Using Computer Vision </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                  Used Python and computer-vision techniques to analyse visual scenes and extract meaningful information.
-                  Developed practical experience in image processing and computational problem-solving.
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Python</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Open CV</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Image processing</span>
-                </div>
-                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
-                  <a href="https://github.com/nimisha064/scene-understanding-computer-vision" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Code</span>
-                  </a>
-                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
-                    <span>Live Demo</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card ai rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" 
-                   alt="Plant Disease Detector" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/600x400/ffe4e6/f43f5e?text=Plant+Disease+AI'">
-              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-rose-500">AST</span>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">AI-Powered Code Reviewer & Quality Analyzer</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                   Developed a tool using Python and Flask to analyse source code and identify potential issues, including unused variables and missing documentation.
-Implemented code analysis and issue reporting with severity levels and line numbers
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Python</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Static Code Analysis (AST)</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Flask</span>
-                </div>
-                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
-                  <a href="https://github.com/nimisha064/ai-powered-code-reviewer" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Code</span>
-                  </a>
-                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
-                    <span>Paper / Notebook</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card web rounded-2xl bg-white dark:bg-carddark border border-purple-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-            <div class="h-48 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" 
-                   alt="Campus Event Platform" 
-                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                   onerror="this.src='https://placehold.co/600x400/f0e8ff/9333ea?text=Campus+Event+Portal'">
-              <span class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 text-xs px-2.5 py-1 rounded-full font-semibold text-purple-600">Robot</span>
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-              <div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">ESP32 BLE Fire-Fighting Robot </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
-                     Developed an embedded robotic system integrating flame sensors, Bluetooth communication, and motor/pump control.
-                     Gained practical experience in sensor integration, embedded programming, and hardware–software interaction.                </p>
-              </div>
-              <div>
-                <div class="flex flex-wrap gap-1.5 mb-4">
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Embedded C/C++</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">ESP32 & Sensor Integration</span>
-                  <span class="text-xs px-2.5 py-1 rounded-md bg-purple-50 dark:bg-slate-800 text-purple-600 dark:text-purple-300">Bluetooth Low Energy (BLE)</span>
-                </div>
-                <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
-                  <a href="https://github.com/nimisha064/esp32-firefighting-robot" target="_blank" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-rose-500 flex items-center space-x-1">
-                    <i class="fa-brands fa-github"></i>
-                    <span>Code</span>
-                  </a>
-                  <a href="#" class="text-xs font-semibold text-rose-500 hover:text-rose-600 flex items-center space-x-1">
-                    <span>Live Demo</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      <!-- 2. AI CODE REVIEWER -->
+      <article class="project-card ai shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-rose-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-code text-6xl text-rose-500"></i>
         </div>
-      </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">AI-Powered Code Reviewer</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            Python and Flask tool that identifies code issues, unused variables, and missing documentation with severity and line details.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Python</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Flask</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">AST</span>
+          </div>
+          <a href="https://github.com/nimisha064/ai-powered-code-reviewer" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 3. JOB APPLICATION TRACKER -->
+      <article class="project-card web shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-blue-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-briefcase text-6xl text-blue-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Job Application Tracker</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            Flask-based web application for organizing job applications, recording application details, and tracking status.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Python</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Flask</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">HTML</span>
+          </div>
+          <a href="https://github.com/nimisha064/job-application-tracker" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. SOLAR CUSTOMER SUPPORT ASSISTANT -->
+      <article class="project-card ai shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-amber-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-solar-panel text-6xl text-amber-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Solar Customer Support Assistant</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            AI-powered assistant using Python, Streamlit, RAG, and Ollama to answer questions from solar-related documents.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Python</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">RAG</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Streamlit</span>
+          </div>
+          <a href="https://github.com/nimisha064/solar-customer-support-assistant" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 5. CUSTOMIZED DRONE -->
+      <article class="project-card embedded shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-sky-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-helicopter text-6xl text-sky-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Customized Surveillance Drone</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            ATmega2560-based drone prototype integrating GPS, LoRa, IMU, ultrasonic, and environmental sensors for tracking and monitoring.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">ATmega2560</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">GPS</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">LoRa</span>
+          </div>
+          <a href="https://github.com/nimisha064/Customized-Drone-for-Survilance-and-Tracking-system" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 6. ENERGY MONITORING -->
+      <article class="project-card embedded shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-emerald-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-bolt text-6xl text-emerald-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">IoT Smart Energy Monitoring</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            ESP32-based energy monitoring system measuring current with an SCT013 sensor and displaying readings on a Wi-Fi web dashboard.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">ESP32</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">IoT</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">SCT013</span>
+          </div>
+          <a href="https://github.com/nimisha064/energy-server-iot-based-smart-energy-monitoring-system" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 7. FIRE-FIGHTING ROBOT -->
+      <article class="project-card embedded shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-orange-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-robot text-6xl text-orange-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">ESP32 Fire-Fighting Robot</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            BLE-controlled robot integrating flame detection, sensor monitoring, and water-pump control for fire suppression.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">ESP32</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Embedded C/C++</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">BLE</span>
+          </div>
+          <a href="https://github.com/nimisha064/esp32-firefighting-robot" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Code
+          </a>
+        </div>
+      </article>
+
+      <!-- 8. JOB APPLICATION TRACKER ALTERNATE SLOT -->
+      <article class="project-card web shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start rounded-2xl bg-white dark:bg-slate-800 border border-purple-100 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+        <div class="h-44 bg-indigo-50 dark:bg-slate-700 flex items-center justify-center">
+          <i class="fa-solid fa-laptop-code text-6xl text-indigo-500"></i>
+        </div>
+        <div class="p-5 flex-1 flex flex-col">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Flask Web Application Development</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-3 flex-1">
+            A software-development project demonstrating web application structure, form handling, and organized application data.
+          </p>
+          <div class="flex flex-wrap gap-2 my-4">
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Python</span>
+            <span class="text-xs px-2 py-1 rounded bg-purple-50 dark:bg-slate-700 text-purple-600 dark:text-purple-300">Flask</span>
+          </div>
+          <a href="https://github.com/nimisha064/job-application-tracker" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-purple-600 dark:text-purple-300 hover:text-rose-500">
+            <i class="fa-brands fa-github mr-1"></i> View Repository
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-2">
+      Swipe horizontally or use the arrow buttons to explore projects.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= PROJECT SLIDER SCRIPT ================= -->
+<script>
+function slideProjects(direction) {
+  const slider = document.getElementById("projects-slider");
+  if (!slider) return;
+
+  const card = slider.querySelector(".project-card");
+  const distance = card ? card.getBoundingClientRect().width + 24 : 320;
+
+  slider.scrollBy({
+    left: direction * distance,
+    behavior: "smooth"
+  });
+}
+
+function filterProjects(category, button) {
+  const slider = document.getElementById("projects-slider");
+  if (!slider) return;
+
+  slider.querySelectorAll(".project-card").forEach(card => {
+    const show = category === "all" || card.classList.contains(category);
+    card.classList.toggle("hidden", !show);
+  });
+
+  document.querySelectorAll("#projects .filter-btn").forEach(btn => {
+    btn.classList.remove("bg-purple-600", "text-white");
+    btn.classList.add(
+      "bg-white",
+      "dark:bg-slate-800",
+      "text-slate-600",
+      "dark:text-slate-300",
+      "border",
+      "border-purple-100",
+      "dark:border-slate-700"
+    );
+  });
+
+  button.classList.remove(
+    "bg-white",
+    "dark:bg-slate-800",
+    "text-slate-600",
+    "dark:text-slate-300",
+    "border",
+    "border-purple-100",
+    "dark:border-slate-700"
+  );
+  button.classList.add("bg-purple-600", "text-white");
+
+  slider.scrollTo({ left: 0, behavior: "smooth" });
+}
+</script>
+<!-- ================= END PROJECTS SECTION ================= -->
+
  
 <!-- ================= EXPERIENCE, CONFERENCES & ACHIEVEMENTS ================= -->
 <section id="experience" class="w-full py-16 bg-white dark:bg-slate-900/50">
