@@ -623,9 +623,9 @@ Implemented code analysis and issue reporting with severity levels and line numb
   <div class="max-w-6xl mx-auto px-6">
 
     <!-- CONTACT HEADING -->
-    <div class="block text-center max-w-2xl mx-auto mb-12">
+    <div class="text-center max-w-2xl mx-auto mb-12">
 
-      <h2 class="block text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
         Get In Touch
       </h2>
 
@@ -637,10 +637,10 @@ Implemented code analysis and issue reporting with severity levels and line numb
 
     </div>
 
-    <!-- CONTACT FORM -->
+    <!-- CONTACT FORM CARD -->
     <div class="max-w-2xl mx-auto p-6 md:p-8 rounded-2xl border border-purple-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 shadow-sm">
 
-      <h3 class="block text-xl font-bold text-slate-900 dark:text-white mb-6">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">
         Contact Form
       </h3>
 
@@ -658,6 +658,10 @@ Implemented code analysis and issue reporting with severity levels and line numb
         <input type="hidden"
                name="subject"
                value="New Contact Message from Nimisha's Portfolio">
+
+        <!-- REPLY-TO EMAIL -->
+        <input type="hidden" name="from_name"
+               value="Nimisha's Portfolio Contact Form">
 
         <!-- SPAM PROTECTION -->
         <input type="checkbox"
@@ -744,11 +748,9 @@ Implemented code analysis and issue reporting with severity levels and line numb
            aria-live="polite"></p>
 
       </form>
-
     </div>
 
   </div>
-
 </section>
 <!-- ================= END CONTACT SECTION ================= -->
 
@@ -775,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button.textContent = "Sending...";
 
     feedback.className =
-      "p-3 rounded-lg text-sm text-slate-700 bg-slate-100 dark:bg-slate-800";
+      "block p-3 rounded-lg text-sm text-slate-700 bg-slate-100 dark:bg-slate-800";
 
     feedback.textContent = "Sending your message...";
 
@@ -797,7 +799,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok && result.success) {
 
         feedback.className =
-          "p-3 rounded-lg text-sm text-green-700 bg-green-100";
+          "block p-3 rounded-lg text-sm text-green-700 bg-green-100";
 
         feedback.textContent =
           "Thank you! Your message has been sent successfully.";
@@ -807,7 +809,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
 
         feedback.className =
-          "p-3 rounded-lg text-sm text-red-700 bg-red-100";
+          "block p-3 rounded-lg text-sm text-red-700 bg-red-100";
 
         feedback.textContent =
           result.message ||
@@ -818,7 +820,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
 
       feedback.className =
-        "p-3 rounded-lg text-sm text-red-700 bg-red-100";
+        "block p-3 rounded-lg text-sm text-red-700 bg-red-100";
 
       feedback.textContent =
         "Network error. Please check your internet connection and try again.";
@@ -835,10 +837,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <!-- ================= END CONTACT FORM SCRIPT ================= -->
-```
 
 
-          
 
   <!-- ================= FOOTER ================= -->
   <footer class="py-8 bg-white dark:bg-slate-900 border-t border-purple-100 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
